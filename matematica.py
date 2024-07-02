@@ -1,3 +1,5 @@
+import pytest
+
 def calcoloFattoriale(x):
     # non ricorsivo --> x! = x*(x-1)*(x-2)*(x-N)...*1
     fattoriale = x
