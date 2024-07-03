@@ -1,37 +1,26 @@
-import pytest
+def somma(a: int | float, b: int | float) -> int | float:
+    return a + b
 
-def calcoloFattoriale(x):
-    # non ricorsivo --> x! = x*(x-1)*(x-2)*(x-N)...*1
-    fattoriale = x
-
-    # Caso base
-    if x == 0 or x == 1:
-        return 1
-
-    for i in range(1, x):
-        fattoriale *= i
-
-    # Analogo a
-    # for i in range(x-1, 1, -1):
-    #     fattoriale *= i
-
-    return fattoriale
-
-def somma (x,y):
-    return x + y
-
-
-def sottrazione (x,y):
-    return x - y
-
-def divsione (num,den):
+def divisione(num: int | float, den: int | float) -> float:
     if den == 0:
-        return 'Non è possibile dividere per 0'
-    else:
-        return num/den
+        raise ValueError
+    return num / den
 
-def moltiplicazione (x,y):
-    return x * y
+# Aggiungi le funzioni moltiplicazione e sottrazione
+def sottrazione(a: int | float, b: int | float) -> int | float:
+    return a - b
 
-def dispariInteri(numeri):
-    return [i for i in numeri if i % 2 != 0 and  i % 5 == 0]
+def moltiplicazione(a: int | float, b: int | float) -> int | float:
+    return a * b
+
+# Aggiungi una funzione magicNumbers per restituire una lista di tutti e soli i numeri interi dispari e multipli di 5 tra start e stop
+# bonus: fallo su una unica riga con la list comprehension
+def magicNumbers(start: int, stop: int) -> list[int]:
+    return [numero for numero in range(start, stop + 1) if not numero % 5 and numero % 2]
+
+# def magicNumbers(numeri):
+#     lista = []
+#     for numero in range(start, stop):
+#         lista.append(numero)
+
+#     return [i for i in numeri if i % 2 != 0 and  i % 5 == 0]
